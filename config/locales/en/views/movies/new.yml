@@ -1,0 +1,5 @@
+en:
+  movies:
+    new:
+      page_title: New movie
+      submit: Create

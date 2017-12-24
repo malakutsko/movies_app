@@ -1,0 +1,7 @@
+= render 'shared/page_title', title: t('.page_title')
+
+= form_for(@movie, html: { method: :post },
+                   class: 'form-horizontal',
+                   builder: BootstrapFormBuilder) do |f|
+  = render 'form_fields', f: f
+  = f.submit t('.submit')

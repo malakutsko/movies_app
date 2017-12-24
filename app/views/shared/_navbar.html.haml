@@ -13,6 +13,8 @@
         - if user_signed_in?
           %li
             = active_link_to t('shared.navbar.account'), edit_user_registration_path, class: 'navbar-nav--link'
+          %li
+            = active_link_to t('shared.navbar.my_movies'), movies_path, class: 'navbar-nav--link'
       %ul.nav.navbar-nav.navbar-right
         - if user_signed_in?
           %li

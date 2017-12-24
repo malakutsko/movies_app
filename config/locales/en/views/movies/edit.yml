@@ -1,0 +1,5 @@
+en:
+  movies:
+    edit:
+      page_title: Edit %{name}
+      submit: Update

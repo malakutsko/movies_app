@@ -32,6 +32,8 @@ class User < ApplicationRecord
   validates :first_name, presence: true
   validates :last_name, presence: true
 
+  has_many :movies
+
   # Override devise mailer function to send mail async
   def send_devise_notification(notification, *args)
     devise_mailer.send(notification, self, *args).deliver_later

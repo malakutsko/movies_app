@@ -1,0 +1,5 @@
+en:
+  movies:
+    index:
+      page_title: Your movies
+      create_new_movie: Create new movie

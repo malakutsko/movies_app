@@ -11,8 +11,8 @@ class BootstrapFormBuilder < ActionView::Helpers::FormBuilder
     @template.content_tag(:div, options) { yield }
   end
 
-  %w(text email password).each do |field_type|
-    define_method "#{field_type}_field" do |method, options = {}|
+  %w(text_field email_field password_field text_area).each do |field_type|
+    define_method "#{field_type}" do |method, options = {}|
       field_tag = super(method, options)
       with_errors(method, with_before_and_after(field_tag, options))
     end
