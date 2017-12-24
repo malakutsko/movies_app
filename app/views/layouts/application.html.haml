@@ -1,0 +1,18 @@
+!!!
+%html
+  %head
+    %title
+      = t('application.title')
+    %meta{ charset: 'utf-8' }
+    %meta{ name: 'application-name', content: t('application.title') }
+
+    = stylesheet_link_tag 'application', media: 'all'
+    = javascript_include_tag 'application', defer: true
+    = csrf_meta_tags
+
+  %body.application-body
+    .container
+      = render 'shared/navbar'
+      .main
+        = render 'shared/flash'
+        = yield

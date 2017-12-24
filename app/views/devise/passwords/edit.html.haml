@@ -1,0 +1,34 @@
+.panel-heading
+  .panel-title.text-center
+    %h1.title
+      = t('devise.passwords.change_your_password')
+
+.login
+  = form_for resource, as: resource_name,
+                       url: password_path(resource_name),
+                       html: { method: :put },
+                       class: 'form-horizontal',
+                       builder: BootstrapFormBuilder do |f|
+    = f.hidden_field :reset_password_token
+
+    = f.form_group :password do
+      = f.label :password, 'New password'
+      .cols-sm-10
+        = f.password_field :password,
+          autofocus: true,
+          class: 'form-control',
+          before: raw("<i class='fa fa-lock'></i>"),
+          autocomplete: 'off'
+
+    = f.form_group :password_confirmation do
+      = f.label :password_confirmation, 'Confirm new password'
+      .cols-sm-10
+        = f.password_field :password_confirmation,
+          class: 'form-control',
+          before: raw("<i class='fa fa-lock'></i>"),
+          autocomplete: 'off'
+    .form-group
+      = f.submit t('devise.passwords.change_my_password'),
+        class: 'btn btn-primary btn-lg btn-block login-button'
+
+  = render 'devise/shared/links'

@@ -1,0 +1,7 @@
+$namespace: '.navbar-nav';
+
+#{$namespace}--link {
+  &.active {
+    background-color: #e7e7e7;
+  }
+}

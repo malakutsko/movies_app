@@ -1,0 +1,11 @@
+---
+
+en:
+  shared:
+    navbar:
+      dashboard: Dashboard
+      sign_in: Sign In
+      sign_up: Sign Up
+      logout: Logout
+      account: Account
+

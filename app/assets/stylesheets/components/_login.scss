@@ -1,0 +1,10 @@
+$namespace: '.login';
+
+#{$namespace} {
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 330px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
