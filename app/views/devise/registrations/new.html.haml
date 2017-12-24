@@ -1,7 +1,4 @@
-.panel-heading
-  .panel-title.text-center
-    %h1.title
-      = t('devise.registrations.form_title')
+= render 'shared/page_title', title: t('devise.registrations.form_title')
 
 .login
   = form_for(resource, as: resource_name,
