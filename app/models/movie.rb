@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: movies
@@ -12,6 +13,7 @@
 
 class Movie < ApplicationRecord
   belongs_to :user
+  has_many :movie_images
 
   validates :name, presence: true
   validates :description, presence: true

@@ -8,6 +8,10 @@ gem 'pg'
 gem 'puma', '~> 3.7'
 gem 'sidekiq'
 
+gem 'aws-sdk'
+gem 'fog-aws'
+gem 'carrierwave'
+
 gem 'sass-rails', '~> 5.0'
 gem 'jquery-rails'
 gem 'bootstrap-sass'

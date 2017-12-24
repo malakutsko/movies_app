@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171224013807) do
+ActiveRecord::Schema.define(version: 20171224215555) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "movie_images", force: :cascade do |t|
+    t.integer "movie_id"
+    t.string "attachment"
+    t.string "attachment_content_type"
+    t.string "attachment_file_name"
+    t.string "attachment_file_size"
+    t.boolean "primary"
+  end
 
   create_table "movies", force: :cascade do |t|
     t.integer "user_id"
