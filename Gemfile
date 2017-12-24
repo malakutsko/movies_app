@@ -22,8 +22,10 @@ gem 'jbuilder', '~> 2.5'
 gem 'devise'
 gem 'rails-i18n', '~> 5.0.0'
 
+gem 'factory_girl_rails'
+gem 'faker'
+
 group :development, :test do
-  gem 'capybara', '~> 2.13'
   gem 'bullet'
   gem 'annotate'
   gem 'dotenv-rails'
@@ -38,4 +40,9 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'pry-byebug'
   gem 'pry-rails'
+end
+
+group :test do
+  gem 'poltergeist'
+  gem 'capybara', '~> 2.13'
 end
