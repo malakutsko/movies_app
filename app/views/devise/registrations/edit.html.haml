@@ -9,16 +9,15 @@
     = f.form_group :first_name do
       = f.label :first_name, class: 'cols-sm-2 control-label', autofocus: true
       .cols-sm-10
-        .input-group
-          = f.text_field :first_name, class: 'form-control'
+        = f.text_field :first_name
     = f.form_group :last_name do
       = f.label :last_name, class: 'cols-sm-2 control-label'
       .cols-sm-10
-        = f.text_field :last_name, class: 'form-control'
+        = f.text_field :last_name
     = f.form_group :email do
       = f.label :email, class: 'cols-sm-2 control-label'
       .cols-sm-10
-        = f.email_field :email, class: 'form-control'
+        = f.email_field :email
     .form-group
       = f.submit t('devise.registrations.update'), class: 'btn btn-primary btn-lg btn-block login-button'
 

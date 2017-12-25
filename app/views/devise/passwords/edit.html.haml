@@ -13,15 +13,13 @@
       .cols-sm-10
         = f.password_field :password,
           autofocus: true,
-          class: 'form-control',
           before: raw("<i class='fa fa-lock'></i>"),
           autocomplete: 'off'
 
     = f.form_group :password_confirmation do
-      = f.label :password_confirmation, 'Confirm new password'
+      = f.label :password_confirmation, t('devise.passwords.confirm_new_password')
       .cols-sm-10
         = f.password_field :password_confirmation,
-          class: 'form-control',
           before: raw("<i class='fa fa-lock'></i>"),
           autocomplete: 'off'
     .form-group
