@@ -1,5 +1,11 @@
+require 'sidekiq/web'
+
 Rails.application.routes.draw do
   root to: 'home#index'
+
+  authenticate :user, ->(u) { u.admin? } do
+    mount Sidekiq::Web => '/sidekiq'
+  end
 
   devise_for :users, controllers: {
     registrations: 'users/registrations',
