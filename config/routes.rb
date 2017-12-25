@@ -7,5 +7,7 @@ Rails.application.routes.draw do
     sessions: 'users/sessions'
   }
 
-  resources :movies
+  resources :movies do
+    resources :images, controller: 'movies/images'
+  end
 end

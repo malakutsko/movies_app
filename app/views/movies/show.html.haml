@@ -1,8 +1,15 @@
 = render 'shared/page_title', title: @movie.name
 
-= link_to t('.edit_movie'), edit_movie_path(@movie), class: 'btn btn-primary btn-lg btn-block'
-= link_to t('.delete_movie'), movie_path(@movie), class: 'btn btn-danger btn-lg btn-block',
-  method: :delete, data: { confirm: t('application.are_you_sure') }
+.movie--show-container
+  .show-images-container
+    .primary-image{ style: "background-image: url(#{@primary_image.attachment.url})" }
+    .secondary-images-container
+      - @secondary_images.each do |image|
+        .secondary-image{ style: "background-image: url(#{image.attachment.url})" }
+  .description
+    = @movie.description
 
-= @movie.name
-= @movie.description
+  .buttons-block
+    = link_to t('.edit_movie'), edit_movie_path(@movie), class: 'btn btn-primary'
+    = link_to t('.delete_movie'), movie_path(@movie), class: 'btn btn-danger',
+      method: :delete, data: { confirm: t('application.are_you_sure') }

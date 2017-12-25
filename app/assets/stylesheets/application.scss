@@ -18,6 +18,10 @@
 
 @import 'layout';
 
+@import 'global/helper';
+
 @import 'components/navbar';
 @import 'components/login';
 @import 'components/form';
+@import 'components/movie';
+@import 'components/movie_image';

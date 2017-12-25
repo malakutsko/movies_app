@@ -2,3 +2,5 @@ en:
   errors:
     messages:
       blank: can't be blank
+      at_least_count_images: please upload at least %{count} images
+

@@ -1,7 +1,25 @@
-= render 'shared/page_title', title: t('.page_title')
+.js-movies-new
+  = render 'shared/page_title', title: t('.page_title')
+  - if @movie.errors[:images].present?
+    .form--error.-tc-
+      = @movie.errors[:images].first
 
-= form_for(@movie, html: { method: :post },
-                   class: 'form-horizontal',
-                   builder: BootstrapFormBuilder) do |f|
-  = render 'form_fields', f: f
-  = f.submit t('.submit')
+  .container.movie
+    .row
+      .col-md-6
+        = hidden_field_tag :image_template, render('movies/images/image', image: MovieImage.new)
+        = form_for(@movie, html: { method: :post, class: 'form-horizontal form js-movie-form' },
+                           builder: BootstrapFormBuilder) do |f|
+          = render 'form_fields', f: f
+          .form-group
+            = f.submit t('.submit'), class: 'btn btn-primary'
+      .col-md-6
+        = form_for @movie.images.new, url: movie_images_path(movie_id: 'new'),
+                                      data: { 'bucket-url' => S3_BUCKET.url },
+                                      html: { multipart: true, class: 'js-images-upload-form' } do |f|
+          = f.file_field :attachment, multiple: true, class: '-h-'
+          %button.btn.btn-primary.js-upload-button.movie--upload-button
+            = t('.upload_button')
+
+          .images-container.js-images-container
+

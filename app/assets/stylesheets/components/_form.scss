@@ -1,5 +1,10 @@
 $namespace: '.form';
 
+#{$namespace} {
+  .input-group {
+    width: 100%;
+  }
+}
 #{$namespace}--error {
   color: #a94442;
 }

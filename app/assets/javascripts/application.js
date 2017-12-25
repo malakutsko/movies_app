@@ -14,3 +14,15 @@
 //= require turbolinks
 //= require jquery
 //= require bootstrap-sprockets
+//= require jquery.ui.widget
+//= require jquery.fileupload
+
+
+//= require constants/namespace
+
+//= require lib/api_client
+//= require lib/ui_component
+//= require lib/page
+
+//= require init/ajax_setup
+//= require init/init_pages

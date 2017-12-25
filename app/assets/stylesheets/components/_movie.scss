@@ -1,0 +1,49 @@
+$namespace: '.movie';
+
+#{$namespace}--show-container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+
+  .show-images-container {
+    display: flex;
+
+    .primary-image {
+      min-height: 400px;
+      min-width: 400px;
+      background-size: cover;
+    }
+
+    .secondary-images-container {
+      display: flex;
+      flex-wrap: wrap;
+      margin-left: 20px;
+    }
+
+    .secondary-image {
+      height: 100px;
+      width: 100px;
+      margin-right: 20px;
+      margin-bottom: 20px;
+      background-size: cover;
+    }
+  }
+
+  .description {
+    margin-top: 20px;
+  }
+
+  .buttons-block {
+    margin-top: 20px;
+  }
+}
+
+
+#{$namespace} .images-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#{$namespace}--upload-button {
+  margin-top: 25px;
+}

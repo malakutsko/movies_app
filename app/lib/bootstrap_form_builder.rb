@@ -13,6 +13,8 @@ class BootstrapFormBuilder < ActionView::Helpers::FormBuilder
 
   %w(text_field email_field password_field text_area).each do |field_type|
     define_method "#{field_type}" do |method, options = {}|
+      options[:class] ||= ''
+      options[:class] += ' form-control'
       field_tag = super(method, options)
       with_errors(method, with_before_and_after(field_tag, options))
     end

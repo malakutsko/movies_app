@@ -3,7 +3,7 @@
 .login
   = form_for resource, as: resource_name,
                        url: session_path(resource_name),
-                       class: 'form-horizontal',
+                       html: { class: 'form-horizontal' },
                        builder: BootstrapFormBuilder do |f|
     = f.form_group :email do
       = f.label :email, class: 'cols-sm-2 control-label'

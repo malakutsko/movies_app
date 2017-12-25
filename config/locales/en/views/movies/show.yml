@@ -1,0 +1,5 @@
+en:
+  movies:
+    show:
+      edit_movie: Edit movie
+      delete_movie: Delete movie

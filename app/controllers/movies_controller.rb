@@ -8,7 +8,9 @@ class MoviesController < ApplicationController
 
   # GET /movie/:id
   def show
-    @movie = current_user.movies.find(params[:id])
+    @movie = current_user.movies.includes(:images).find(params[:id])
+    @secondary_images = @movie.images.to_a
+    @primary_image = @secondary_images.shift
   end
 
   # GET /movies/new
@@ -21,17 +23,17 @@ class MoviesController < ApplicationController
     @movie = current_user.movies.new(permitted_params)
 
     if @movie.save
-      flash[:notice] = 'Success'
+      flash[:notice] = I18n.t('movie.success_create_notice')
       redirect_to movie_path(@movie)
     else
-      flash[:error] = 'Was not able to save movie. See errors below'
+      flash[:alert] = I18n.t('movie.fail_create_notice')
       render :new
     end
   end
 
   # GET /movies/:id/edit
   def edit
-    @movie = current_user.movies.find(params[:id])
+    @movie = current_user.movies.includes(:images).find(params[:id])
   end
 
   # PATCH /movies/:id
@@ -39,11 +41,11 @@ class MoviesController < ApplicationController
     @movie = current_user.movies.find(params[:id])
 
     if @movie.update(permitted_params)
-      flash[:notice] = 'Success'
+      flash[:notice] = I18n.t('movie.success_update_notice')
       redirect_to movie_path(@movie)
     else
-      flash[:error] = 'Was not able to save movie. See errors below'
-      render :new
+      flash[:error] = I18n.t('movie.fail_update_notice')
+      render :edit
     end
   end
 
@@ -52,10 +54,10 @@ class MoviesController < ApplicationController
     @movie = current_user.movies.find(params[:id])
 
     if @movie.destroy
-      flash[:notice] = 'Success'
+      flash[:notice] = I18n.t('movie.success_delete_notice')
       redirect_to movies_path
     else
-      flash[:error] = 'Was not able to delete this movie'
+      flash[:alert] = I18n.t('movie.fail_delete_notice')
       redirect_to movie_path(@movie)
     end
   end
@@ -63,7 +65,7 @@ class MoviesController < ApplicationController
   private
 
   def permitted_params
-    params.required(:movie).permit(:name, :description)
+    params.required(:movie).permit(:name, :description, image_ids: [])
   end
 end
 

@@ -1,2 +1,8 @@
-= f.text_field :name
-= f.text_area :description
+= f.form_group :name do
+  = f.label :name, class: 'cols-sm-2 control-label'
+  = f.text_field :name
+= f.form_group :description do
+  = f.label :description, class: 'cols-sm-2 control-label'
+  = f.text_area :description, rows: 10
+- f.object.image_ids.each do |image_id|
+  = hidden_field_tag 'movie[image_ids][]', image_id

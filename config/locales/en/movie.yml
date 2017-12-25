@@ -1,0 +1,9 @@
+en:
+  movie:
+    success_create_notice: Successfully created
+    fail_create_notice: Was not able to save movie. See errors below
+    success_update_notice: Successfully updated
+    fail_update_notice: Was not able to update movie. See errors below
+    success_delete_notice: Successfully deleted
+    fail_delete_notice: Was not able to delete movie
+

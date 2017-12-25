@@ -1,5 +1,6 @@
 en:
   movies:
     edit:
+      upload_button: Upload images
       page_title: Edit %{name}
       submit: Update

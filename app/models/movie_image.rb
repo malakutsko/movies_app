@@ -13,7 +13,11 @@
 #
 
 class MovieImage < ApplicationRecord
-  belongs_to :movie
+  belongs_to :movie, optional: true
 
-  mount_uploader :attachment, MovieImageUploader
+  mount_uploader :attachment, MovieImageUploader, mount_on: :attachment_file_name
+
+  def key
+    attachment.store_path.to_s + attachment_file_name.to_s
+  end
 end
