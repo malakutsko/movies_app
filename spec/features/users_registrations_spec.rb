@@ -37,7 +37,7 @@ feature 'Users Registrations' do
     click_on I18n.t('devise.registrations.submit_button')
 
     # And expect to be on my dashboard
-    expect(page).to have_content 'Hello world'
+    expect(current_path).to eq root_path
   end
 
   scenario 'User updates their account' do

@@ -1,4 +1,4 @@
 .movie
-  .movie--image{ style: "background-image: url(#{movie.primary_image.attachment.url})"}
+  .movie--image{ style: "background-image: url(#{movie.primary_image&.attachment&.url})"}
   .movie--name
     = movie.name

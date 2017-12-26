@@ -9,4 +9,5 @@ en:
       logout: Logout
       account: Account
       signed_in_as: Signed in as %{name}
+      my_movies: My movies
 

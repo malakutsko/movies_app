@@ -4,6 +4,7 @@ module Movies
   class ImagesController < ApplicationController
     before_action :define_movie, only: :create
 
+    # POST /movies/:movie_id/images
     def create
       @image = if @movie
                  @movie.images.create!(image_params)
@@ -12,11 +13,12 @@ module Movies
                end
 
       @presigned_post = S3PresignPost.new(
-        key: @image.key,
+        path: @image.reload.attachment.path,
         content_type: @image.attachment_content_type
       ).call
     end
 
+    # DELETE /movies/:movie_id/images/:id
     def destroy
       @image = MovieImage.find(params[:id])
       @image.destroy

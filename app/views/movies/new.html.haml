@@ -16,8 +16,8 @@
       .col-md-6
         = form_for @movie.images.new, url: movie_images_path(movie_id: 'new'),
                                       data: { 'bucket-url' => S3_BUCKET.url },
-                                      html: { multipart: true, class: 'js-images-upload-form' } do |f|
-          = f.file_field :attachment, multiple: true, class: '-h-'
+                                      html: { multipart: true, class: 'js-images-upload-form form' } do |f|
+          = f.file_field :attachment, multiple: true, class: 'real-upload-button'
           %button.btn.btn-primary.js-upload-button.movie--upload-button
             = t('.upload_button')
 

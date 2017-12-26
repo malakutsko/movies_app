@@ -4,6 +4,12 @@ $namespace: '.form';
   .input-group {
     width: 100%;
   }
+
+  .real-upload-button {
+     position: absolute;
+     top: -9999px;
+     left: -9999px
+  }
 }
 #{$namespace}--error {
   color: #a94442;

@@ -58,5 +58,7 @@ class MoviesJS.Components.ImagesUploadForm extends MoviesJS.Lib.UIComponent
      new MoviesJS.Components.MovieImage(container: $newImage)
 
    markImageUploaded: (e, data) ->
-     imageId = data.formData.key.match(/^uploads\/movie_images\/(\d+)/)[1]
+     imageIdMatch = data.formData.key.match(/^uploads\/movie_images\/(\d+)/)
+     return unless imageIdMatch
+     imageId = imageIdMatch[1]
      $(".js-movie-image[data-id=#{imageId}]").removeClass('-processing')

@@ -2,11 +2,8 @@
 
 require 'rails_helper'
 require 'capybara/email/rspec'
-require 'pry'
 
 feature 'Users Passwords' do
-  include Warden::Test::Helpers
-
   let(:user) { create(:user) }
 
   scenario 'User recovers password' do
