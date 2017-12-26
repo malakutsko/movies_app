@@ -22,6 +22,8 @@ ActiveRecord::Schema.define(version: 20171225232816) do
     t.string "attachment_file_name"
     t.string "attachment_file_size"
     t.boolean "primary"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "movies", force: :cascade do |t|

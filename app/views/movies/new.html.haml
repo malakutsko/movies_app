@@ -4,7 +4,7 @@
     .form--error.-tc-
       = @movie.errors[:images].first
 
-  .container.movie
+  .container
     .row
       .col-md-6
         = hidden_field_tag :image_template, render('movies/images/image', image: MovieImage.new)
@@ -21,5 +21,5 @@
           %button.btn.btn-primary.js-upload-button.movie--upload-button
             = t('.upload_button')
 
-          .images-container.js-images-container
+          .movie--images-container.js-images-container
 

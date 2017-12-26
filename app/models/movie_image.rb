@@ -10,6 +10,8 @@
 #  attachment_file_name    :string
 #  attachment_file_size    :string
 #  primary                 :boolean
+#  created_at              :datetime         not null
+#  updated_at              :datetime         not null
 #
 
 class MovieImage < ApplicationRecord

@@ -1,5 +1,22 @@
 $namespace: '.movie';
 
+#{$namespace} {
+  width: 200px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+
+  &--image {
+    min-height: 200px;
+    min-width: 200px;
+    background-size: cover;
+  }
+
+  &--name {
+    margin-top: 10px;
+    text-align: center;
+  }
+}
+
 #{$namespace}--show-container {
   display: flex;
   flex-direction: column;
@@ -40,7 +57,7 @@ $namespace: '.movie';
 }
 
 
-#{$namespace} .images-container {
+#{$namespace}--images-container {
   display: flex;
   flex-wrap: wrap;
 }

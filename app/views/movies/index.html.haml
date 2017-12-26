@@ -1,7 +1,9 @@
 = render 'shared/page_title', title: t('.page_title')
 
-= link_to t('.create_new_movie'), new_movie_path, class: 'btn btn-success btn-lg btn-block'
+.movies-index
+  .-tc-
+    = link_to t('.create_new_movie'), new_movie_path, class: 'btn btn-success btn-lg'
 
-- @movies.each do |movie|
-  %p
-    = link_to movie.name, movie_path(movie)
+  .movies-list
+    - @movies.each do |movie|
+      = render 'movie', movie: movie

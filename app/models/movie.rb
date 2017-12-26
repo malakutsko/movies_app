@@ -16,6 +16,7 @@ class Movie < ApplicationRecord
 
   belongs_to :user
   has_many :images, class_name: 'MovieImage', dependent: :destroy
+  has_one :primary_image, -> { limit(1).order(created_at: :asc) }, class_name: 'MovieImage'
 
   validates :name, presence: true
   validates :description, presence: true

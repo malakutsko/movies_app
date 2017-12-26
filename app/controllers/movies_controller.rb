@@ -3,7 +3,7 @@
 class MoviesController < ApplicationController
   # GET /movies
   def index
-    @movies = current_user.movies
+    @movies = current_user.movies.includes(:primary_image)
   end
 
   # GET /movie/:id
