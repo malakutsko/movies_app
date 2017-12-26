@@ -48,4 +48,5 @@ group :test do
   gem 'poltergeist'
   gem 'capybara', '~> 2.13'
   gem 'capybara-email'
+  gem 'shoulda-matchers'
 end

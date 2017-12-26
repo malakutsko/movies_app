@@ -60,4 +60,8 @@ RSpec.configure do |config|
 
   require Rails.root.join('spec/support/factory_girl.rb')
   require 'sidekiq/testing/inline'
+  require 'shoulda/matchers'
+
+  config.include(Shoulda::Matchers::ActiveModel, type: :model)
+  config.include(Shoulda::Matchers::ActiveRecord, type: :model)
 end
