@@ -55,6 +55,7 @@ class MoviesJS.Components.ImagesUploadForm extends MoviesJS.Lib.UIComponent
      $newImage.addClass('-processing')
      $newImage.attr('data-id', id)
      @$movieForm.append("<input type='hidden' name='movie[image_ids][]' value=#{id}>")
+     new MoviesJS.Components.MovieImage(container: $newImage)
 
    markImageUploaded: (e, data) ->
      imageId = data.formData.key.match(/^uploads\/movie_images\/(\d+)/)[1]

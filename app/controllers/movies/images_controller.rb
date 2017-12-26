@@ -2,7 +2,7 @@
 
 module Movies
   class ImagesController < ApplicationController
-    before_action :define_movie
+    before_action :define_movie, only: :create
 
     def create
       @image = if @movie
@@ -18,6 +18,8 @@ module Movies
     end
 
     def destroy
+      @image = MovieImage.find(params[:id])
+      @image.destroy
     end
 
     # def make_primary
