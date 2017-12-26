@@ -1,1 +1,14 @@
-= t('hello')
+.movies-index
+  - if @your_recent_movies.present?
+    = render 'shared/page_title', title: t('.your_recent_movies')
+    .movies-list
+      - @your_recent_movies.each do |movie|
+        = render 'movies/movie', movie: movie
+
+  - if @other_recent_movies.present?
+    = render 'shared/page_title', title: t('.other_recent_movies')
+
+    .movies-list
+      - @other_recent_movies.each do |movie|
+        = render 'movies/movie', movie: movie, display_as_link: false
+

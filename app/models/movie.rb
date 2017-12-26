@@ -1,5 +1,4 @@
 # frozen_string_literal: true
-
 # == Schema Information
 #
 # Table name: movies
@@ -8,8 +7,9 @@
 #  user_id     :integer
 #  name        :string
 #  description :string
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
 #
-
 
 class Movie < ApplicationRecord
   MINIMUM_NUMBER_OF_IMAGES = 1
@@ -21,6 +21,8 @@ class Movie < ApplicationRecord
   validates :name, presence: true
   validates :description, presence: true
   validate :minimum_number_of_images_validation
+
+  scope :recent, -> { order(created_at: :desc).limit(10) }
 
   private
 

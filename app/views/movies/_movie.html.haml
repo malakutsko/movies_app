@@ -1,5 +1,8 @@
-= link_to movie_path(movie) do
-  .movie
-    .movie--image{ style: "background-image: url(#{movie.primary_image.attachment.url})"}
-    .movie--name
-      = movie.name
+:ruby
+  display_as_link = local_assigns[:display_as_link] != false
+
+- if display_as_link
+  = link_to movie_path(movie) do
+    = render 'movies/movie_body', movie: movie
+- else
+  = render 'movies/movie_body', movie: movie
