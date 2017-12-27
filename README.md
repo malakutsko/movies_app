@@ -1,24 +1,9 @@
-# README
+# Movies App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is the code chellenge, that I've got from one of my potential employers.
+The application implements next basic features:
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Users can sign in, sign up, update their account and recover password (devise)
+* Users can CRUD movies
+* Users can upload many images for each movie (carrierwave, aws-sdk, fog-aws)
+* Users can see list of their movies
