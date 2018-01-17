@@ -6,7 +6,7 @@ class HomeController < ApplicationController
   def index
     if current_user
       @your_recent_movies = current_user.movies.includes(:primary_image).recent
-      @other_recent_movies = Movie.includes(:primary_image).where.not(user_id: current_user.id)
+      @other_recent_movies = Movie.includes(:primary_image).where.not(user_id: current_user.id).recent
     else
       @other_recent_movies = Movie.includes(:primary_image).recent
     end

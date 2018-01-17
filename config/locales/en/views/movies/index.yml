@@ -3,3 +3,4 @@ en:
     index:
       page_title: Your movies
       create_new_movie: Create new movie
+      import_movie: Import movie from IMDB

@@ -3,7 +3,7 @@
 class MoviesController < ApplicationController
   # GET /movies
   def index
-    @movies = current_user.movies.includes(:primary_image)
+    @movies = current_user.movies.includes(:primary_image).order(:release_year)
   end
 
   # GET /movie/:id
@@ -59,6 +59,23 @@ class MoviesController < ApplicationController
     else
       flash[:alert] = I18n.t('movie.fail_delete_notice')
       redirect_to movie_path(@movie)
+    end
+  end
+
+  # GET /movies/new_import
+  def new_import
+  end
+
+  # POST /movies/import
+  def import
+    movie = ImportMovieService.new(name: params[:search_name], user: current_user).call
+
+    if movie
+      flash[:notice] = I18n.t('movie.success_import_notice')
+      redirect_to movie_path(movie)
+    else
+      flash[:alert] = I18n.t('movie.fail_import_notice')
+      render :new_import
     end
   end
 

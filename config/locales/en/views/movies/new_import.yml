@@ -1,0 +1,7 @@
+en:
+  movies:
+    new_import:
+      search_name_field_label: Name
+      search_name_field_placeholder: The Lord of the Rings
+      page_title: Import movie
+      submit: Import

@@ -51,4 +51,5 @@ group :test do
   gem 'shoulda-matchers'
   gem 'database_cleaner'
   gem 'webmock'
+  gem 'vcr', require: false
 end

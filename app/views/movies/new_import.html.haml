@@ -1,0 +1,12 @@
+.js-movies-new
+  = render 'shared/page_title', title: t('.page_title')
+
+  .container
+    .row
+      .col-md-6
+        = form_tag import_movie_path, html: { method: :post, class: 'form-horizontal form' } do |f|
+          .form-group
+            .input-group
+              = label_tag :search_name, t('search_name_field_label')
+              = text_field_tag :search_name, '', class: 'form-control', placeholder: t('.search_name_field_placeholder')
+          = submit_tag t('.submit'), class: 'btn btn-primary'

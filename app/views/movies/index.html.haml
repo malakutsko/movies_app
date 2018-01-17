@@ -3,6 +3,7 @@
 .movies-index
   .-tc-
     = link_to t('.create_new_movie'), new_movie_path, class: 'btn btn-success btn-lg'
+    = link_to t('.import_movie'), new_import_movie_path, class: 'btn btn-success btn-lg'
 
   .movies-list
     - @movies.each do |movie|

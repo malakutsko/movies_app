@@ -16,4 +16,7 @@ Rails.application.routes.draw do
   resources :movies do
     resources :images, controller: 'movies/images'
   end
+
+  get '/movies/import/new', to: 'movies#new_import', as: 'new_import_movie'
+  post '/movies/import', to: 'movies#import', as: 'import_movie'
 end
